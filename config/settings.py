@@ -36,6 +36,7 @@ THIRD_PARTY_PACKAGES = [
 ]
 
 DJANGO_APPS = [
+    'api.apps.ApiConfig',
     'image_processor.apps.ImageProcessorConfig',
 ]
 
