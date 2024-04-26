@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+THIRD_PARTY_PACKAGES = [
+    'rest_framework',
+]
+
 DJANGO_APPS = [
     'image_processor.apps.ImageProcessorConfig',
 ]
@@ -43,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     *DJANGO_APPS,
+    *THIRD_PARTY_PACKAGES,
 ]
 
 MIDDLEWARE = [
