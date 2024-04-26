@@ -30,6 +30,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+DJANGO_APPS = [
+    'image_processor.apps.ImageProcessorConfig',
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    *DJANGO_APPS,
 ]
 
 MIDDLEWARE = [
