@@ -10,8 +10,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from image_processor.api.serializers import ImageSerializer
-from image_processor.segmentation_models.tracer_b7 import TracerUniversalB7
+from ..api.serializers import ImageSerializer
+from ..segmentation_models.tracer_b7 import TracerUniversalB7
 
 
 class BackgroundRemovalAPIView(APIView):

@@ -1,12 +1,14 @@
-import requests
 import base64
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime
 import os
+
+import requests
 
 url = 'http://127.0.0.1:8000/api/image-process/remove-background/'
 
-image_files = os.listdir('images')
 
-for index, image_file in enumerate(image_files, start=1):
+def process_image(image_file):
     picture_id = os.path.splitext(image_file)[0]
 
     with open(os.path.join('images', image_file), 'rb') as f:
@@ -22,4 +24,11 @@ for index, image_file in enumerate(image_files, start=1):
     if status_code == 200:
         print(f'Picture {picture_id} background removed successfully!')
     else:
-        print(f'Failed to remove picture {picture_id} background!')
+        print(f'Failed to remove background for picture {picture_id}!')
+
+
+if __name__ == '__main__':
+    image_files = os.listdir('images')
+
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        executor.map(process_image, image_files)
