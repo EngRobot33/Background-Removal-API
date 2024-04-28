@@ -1,4 +1,5 @@
 import base64
+import logging
 import os
 from io import BytesIO
 
@@ -12,6 +13,8 @@ from rest_framework.views import APIView
 
 from ..api.serializers import ImageSerializer
 from ..segmentation_models.tracer_b7 import TracerUniversalB7
+
+logger = logging.getLogger('image_processor.views')
 
 
 class BackgroundRemovalAPIView(APIView):
@@ -52,4 +55,5 @@ class BackgroundRemovalAPIView(APIView):
                 status=status.HTTP_200_OK
             )
         else:
+            logger.error(serializer.errors)
             return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
