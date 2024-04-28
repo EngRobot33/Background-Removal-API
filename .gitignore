@@ -357,4 +357,7 @@ node_modules/
 # LSP config files
 pyrightconfig.json
 
+# tracer_b7.pth model file
+tracer_b7.pth
+
 # End of https://www.toptal.com/developers/gitignore/api/python,django,pycharm+all
