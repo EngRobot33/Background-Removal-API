@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from conv_modules import BasicConv2d, DWConv, DWSConv
+from .conv_modules import BasicConv2d, DWConv, DWSConv
 
 
 class RFB_Block(nn.Module):

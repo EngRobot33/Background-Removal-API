@@ -16,8 +16,8 @@ from typing import List, Optional, Tuple
 
 from torch import Tensor
 
-from efficientnet import EfficientEncoderB7
-from att_modules import (
+from .efficientnet import EfficientEncoderB7
+from .att_modules import (
     RFB_Block,
     aggregation,
     ObjectAttention,

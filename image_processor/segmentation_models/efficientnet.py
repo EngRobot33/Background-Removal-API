@@ -4,7 +4,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from effi_utils import (
+from .effi_utils import (
     get_same_padding_conv2d,
     calculate_output_image_size,
     MemoryEfficientSwish,

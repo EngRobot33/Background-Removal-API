@@ -5,8 +5,8 @@ import torch
 import torchvision.transforms as transforms
 from PIL import Image
 
-from tracer import TracerDecoder
-from efficientnet import EfficientEncoderB7
+from .tracer import TracerDecoder
+from .efficientnet import EfficientEncoderB7
 
 
 class EmptyAutocast(object):
